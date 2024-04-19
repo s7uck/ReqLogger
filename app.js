@@ -4,10 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var astropix = require('./routes/index');
+var index = require('./routes/index');
 
 var app = express();
 
+site = require('./config.js');
+app.locals.site = site;
 const LOGFILE = process.env.LOGFILE || '/tmp/reqlogger.log';
 
 // view engine setup
